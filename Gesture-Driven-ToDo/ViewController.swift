@@ -16,6 +16,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var addToDoTask: UIButton!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var taskTextField: UITextField!
+    @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var labelButtonContainer: UIStackView!
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,16 +25,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         peekaboo()
         tableView.dataSource = self
         tableView.delegate = self
-        //tableView.backgroundColor = UIColor.gray
         tableView.register(TableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.separatorStyle = .none
-        tableView.rowHeight = 50.0
     }
     
     func styling() {
         let myGreen = UIColor(red: 75.00/255.00, green: 190.00/255.00, blue: 102.00/255.00, alpha: 1.00)
+        taskTextField.sizeToFit()
         taskTextField.layer.borderWidth = 2.0
         taskTextField.layer.borderColor = myGreen.cgColor
+        taskTextField.clearButtonMode = .whileEditing
         addButton.backgroundColor = myGreen
         addButton.setTitleColor(UIColor.white, for: .normal)
         addButton.titleLabel?.textAlignment = .center
@@ -40,22 +42,38 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func peekaboo() {
         addToDoTask.isHidden = false
-        taskTextField.isHidden = true
-        addButton.isHidden = true
+        labelButtonContainer.isHidden = true
     }
     
     @IBAction func addTask(_ sender: Any) {
         addToDoTask.isHidden = true
-        taskTextField.isHidden = false
-        addButton.isHidden = false
+        labelButtonContainer.isHidden = false
     }
     
     
     @IBAction func didSelectAdd(_ sender: Any) {
-        peekaboo()
         if let task = taskTextField.text {
-            addTaskToTheList(task: task)
+            if task.characters.count == 0 {
+                taskTextField.placeholder = "Please enter valid data"
+            }
+            else {
+               taskTextField.placeholder = "ex: Buy Chocolate"
+               addTaskToTheList(task: task)
+               clearField()
+               peekaboo()
         }
+    }
+    }
+    
+    
+    @IBAction func cancelClicked(_ sender: Any) {
+        clearField()
+        peekaboo()
+    }
+    
+    func clearField() {
+        taskTextField.text = ""
+        taskTextField.resignFirstResponder()
     }
     
     func addTaskToTheList(task: String) {
@@ -68,6 +86,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return 1
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 40.0
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if toDoItems.count == 0 {
             tableView.backgroundView = UIImageView(image: UIImage(named: "No-task"))

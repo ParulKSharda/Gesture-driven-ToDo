@@ -37,47 +37,69 @@
                                     <action selector="addTask:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RhI-5p-3Lh"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ex: Buy Fruits" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kx0-hj-T9g">
-                                <rect key="frame" x="16" y="40" width="250" height="36"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="38R-e9-SkB">
+                                <rect key="frame" x="16" y="40" width="343" height="36"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ex: Buy Fruits" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kx0-hj-T9g">
+                                        <rect key="frame" x="0.0" y="0.0" width="241" height="36"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eqm-D5-mk6">
+                                        <rect key="frame" x="241" y="0.0" width="51" height="36"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <state key="normal" title="+"/>
+                                        <connections>
+                                            <action selector="didSelectAdd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lbc-l2-edm"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jnc-DJ-zqc">
+                                        <rect key="frame" x="292" y="0.0" width="51" height="36"/>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <state key="normal" title="-"/>
+                                        <connections>
+                                            <action selector="cancelClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jfx-ma-mnn"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="EmM-XF-DoB"/>
+                                    <constraint firstItem="Jnc-DJ-zqc" firstAttribute="top" secondItem="38R-e9-SkB" secondAttribute="top" id="0Wg-Gf-BZr"/>
+                                    <constraint firstAttribute="bottom" secondItem="Jnc-DJ-zqc" secondAttribute="bottom" id="28A-gp-gIF"/>
+                                    <constraint firstItem="eqm-D5-mk6" firstAttribute="leading" secondItem="kx0-hj-T9g" secondAttribute="trailing" constant="10" id="65h-7w-AFS"/>
+                                    <constraint firstItem="Jnc-DJ-zqc" firstAttribute="height" secondItem="eqm-D5-mk6" secondAttribute="height" id="6Nf-6e-Wk2"/>
+                                    <constraint firstItem="kx0-hj-T9g" firstAttribute="top" secondItem="38R-e9-SkB" secondAttribute="top" id="7Sq-p0-Szi"/>
+                                    <constraint firstAttribute="trailing" secondItem="Jnc-DJ-zqc" secondAttribute="trailing" id="ECA-HF-mVY"/>
+                                    <constraint firstItem="kx0-hj-T9g" firstAttribute="leading" secondItem="38R-e9-SkB" secondAttribute="leading" id="OrI-o1-ZT6"/>
+                                    <constraint firstAttribute="bottom" secondItem="eqm-D5-mk6" secondAttribute="bottom" id="OyQ-JL-Ktw"/>
+                                    <constraint firstItem="Jnc-DJ-zqc" firstAttribute="width" secondItem="eqm-D5-mk6" secondAttribute="width" id="Wb9-i2-K43"/>
+                                    <constraint firstItem="Jnc-DJ-zqc" firstAttribute="leading" secondItem="eqm-D5-mk6" secondAttribute="trailing" constant="4" id="ZKp-Se-wiH"/>
+                                    <constraint firstAttribute="bottom" secondItem="kx0-hj-T9g" secondAttribute="bottom" id="nj5-Lx-Xf9"/>
+                                    <constraint firstItem="eqm-D5-mk6" firstAttribute="top" secondItem="38R-e9-SkB" secondAttribute="top" id="tge-mb-ohz"/>
                                 </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eqm-D5-mk6">
-                                <rect key="frame" x="309" y="40" width="50" height="36"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="qnA-RJ-Frh"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
-                                <state key="normal" title="Add"/>
-                                <connections>
-                                    <action selector="didSelectAdd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lbc-l2-edm"/>
-                                </connections>
-                            </button>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="kx0-hj-T9g" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="6i8-o4-hO7"/>
                             <constraint firstItem="p7L-2v-WrL" firstAttribute="top" secondItem="Wwn-TX-EQ0" secondAttribute="bottom" constant="20" id="9jw-FO-MeC"/>
-                            <constraint firstItem="eqm-D5-mk6" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="Ann-jk-BfH"/>
                             <constraint firstItem="Wwn-TX-EQ0" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="PRs-9d-Mxb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Wwn-TX-EQ0" secondAttribute="trailing" id="PY0-66-f6s"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="38R-e9-SkB" secondAttribute="trailing" id="QDu-qs-MMj"/>
                             <constraint firstItem="p7L-2v-WrL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="QES-JI-bqw"/>
-                            <constraint firstItem="kx0-hj-T9g" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Qoh-p7-Bz0"/>
                             <constraint firstItem="Wwn-TX-EQ0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ZTe-dD-S14"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="eqm-D5-mk6" secondAttribute="trailing" id="dVK-v0-H09"/>
-                            <constraint firstItem="p7L-2v-WrL" firstAttribute="top" secondItem="eqm-D5-mk6" secondAttribute="bottom" constant="20" id="ftD-jz-sUv"/>
+                            <constraint firstItem="38R-e9-SkB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="e03-lt-wlI"/>
+                            <constraint firstItem="38R-e9-SkB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="hJg-g2-VyI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="p7L-2v-WrL" secondAttribute="trailing" id="lAC-3Q-fod"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="p7L-2v-WrL" secondAttribute="bottom" constant="20" id="nzy-Rz-LW2"/>
-                            <constraint firstItem="p7L-2v-WrL" firstAttribute="top" secondItem="kx0-hj-T9g" secondAttribute="bottom" constant="20" id="vlV-bY-DoN"/>
+                            <constraint firstItem="p7L-2v-WrL" firstAttribute="top" secondItem="38R-e9-SkB" secondAttribute="bottom" constant="20" id="yk5-ht-JWa"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="addButton" destination="eqm-D5-mk6" id="W66-pc-9xU"/>
                         <outlet property="addToDoTask" destination="Wwn-TX-EQ0" id="eiy-pw-1aE"/>
+                        <outlet property="cancelButton" destination="Jnc-DJ-zqc" id="RP3-Gz-nBi"/>
+                        <outlet property="labelButtonContainer" destination="38R-e9-SkB" id="53E-Bb-Tlu"/>
                         <outlet property="tableView" destination="p7L-2v-WrL" id="XLM-Bl-9IO"/>
                         <outlet property="taskTextField" destination="kx0-hj-T9g" id="dVE-Lw-hKp"/>
                     </connections>
