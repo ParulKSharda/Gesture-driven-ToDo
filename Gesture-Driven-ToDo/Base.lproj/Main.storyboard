@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="p7L-2v-WrL">
-                                <rect key="frame" x="16" y="96" width="343" height="571"/>
+                                <rect key="frame" x="16" y="96" width="343" height="551"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wwn-TX-EQ0">
@@ -71,7 +71,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="eqm-D5-mk6" secondAttribute="trailing" id="dVK-v0-H09"/>
                             <constraint firstItem="p7L-2v-WrL" firstAttribute="top" secondItem="eqm-D5-mk6" secondAttribute="bottom" constant="20" id="ftD-jz-sUv"/>
                             <constraint firstAttribute="trailingMargin" secondItem="p7L-2v-WrL" secondAttribute="trailing" id="lAC-3Q-fod"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="p7L-2v-WrL" secondAttribute="bottom" id="nzy-Rz-LW2"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="p7L-2v-WrL" secondAttribute="bottom" constant="20" id="nzy-Rz-LW2"/>
                             <constraint firstItem="p7L-2v-WrL" firstAttribute="top" secondItem="kx0-hj-T9g" secondAttribute="bottom" constant="20" id="vlV-bY-DoN"/>
                         </constraints>
                     </view>

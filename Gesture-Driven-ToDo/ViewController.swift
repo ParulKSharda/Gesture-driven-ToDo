@@ -21,23 +21,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewDidLoad()
         styling()
         peekaboo()
-        
-        toDoItems.append(ToDoItem(text: "feed the cat"))
-        toDoItems.append(ToDoItem(text: "buy eggs"))
-        toDoItems.append(ToDoItem(text: "watch WWDC videos"))
-        toDoItems.append(ToDoItem(text: "rule the Web"))
-        toDoItems.append(ToDoItem(text: "buy a new iPhone"))
-        toDoItems.append(ToDoItem(text: "darn holes in socks"))
-        toDoItems.append(ToDoItem(text: "write this tutorial"))
-        toDoItems.append(ToDoItem(text: "master Swift"))
-        toDoItems.append(ToDoItem(text: "learn to draw"))
-        toDoItems.append(ToDoItem(text: "get more exercise"))
-        toDoItems.append(ToDoItem(text: "catch up with Mom"))
-        toDoItems.append(ToDoItem(text: "get a hair cut"))
-        
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.backgroundColor = UIColor.black
+        //tableView.backgroundColor = UIColor.gray
         tableView.register(TableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.separatorStyle = .none
         tableView.rowHeight = 50.0
@@ -67,6 +53,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @IBAction func didSelectAdd(_ sender: Any) {
         peekaboo()
+        if let task = taskTextField.text {
+            addTaskToTheList(task: task)
+        }
+    }
+    
+    func addTaskToTheList(task: String) {
+        toDoItems.append(ToDoItem(text: task))
+        tableView.reloadData()
     }
 
     
@@ -75,6 +69,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if toDoItems.count == 0 {
+            tableView.backgroundView = UIImageView(image: UIImage(named: "No-task"))
+        }
+        else {
+            tableView.backgroundView?.isHidden = true
+        }
         return toDoItems.count
     }
     
