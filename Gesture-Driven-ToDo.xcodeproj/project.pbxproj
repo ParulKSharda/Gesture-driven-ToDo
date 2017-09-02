@@ -15,6 +15,7 @@
 		144BBD021F59AFFF00426B33 /* Gesture_Driven_ToDoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144BBD011F59AFFF00426B33 /* Gesture_Driven_ToDoTests.swift */; };
 		144BBD0D1F59AFFF00426B33 /* Gesture_Driven_ToDoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144BBD0C1F59AFFF00426B33 /* Gesture_Driven_ToDoUITests.swift */; };
 		144BBD1B1F59B0CB00426B33 /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144BBD1A1F59B0CB00426B33 /* ToDoItem.swift */; };
+		144BBD1D1F59C8A100426B33 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144BBD1C1F59C8A100426B33 /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		144BBD0C1F59AFFF00426B33 /* Gesture_Driven_ToDoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gesture_Driven_ToDoUITests.swift; sourceTree = "<group>"; };
 		144BBD0E1F59AFFF00426B33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		144BBD1A1F59B0CB00426B33 /* ToDoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoItem.swift; sourceTree = "<group>"; };
+		144BBD1C1F59C8A100426B33 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				144BBCF51F59AFFF00426B33 /* LaunchScreen.storyboard */,
 				144BBCF81F59AFFF00426B33 /* Info.plist */,
 				144BBD1A1F59B0CB00426B33 /* ToDoItem.swift */,
+				144BBD1C1F59C8A100426B33 /* TableViewCell.swift */,
 			);
 			path = "Gesture-Driven-ToDo";
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				144BBCEF1F59AFFF00426B33 /* ViewController.swift in Sources */,
+				144BBD1D1F59C8A100426B33 /* TableViewCell.swift in Sources */,
 				144BBCED1F59AFFF00426B33 /* AppDelegate.swift in Sources */,
 				144BBD1B1F59B0CB00426B33 /* ToDoItem.swift in Sources */,
 			);

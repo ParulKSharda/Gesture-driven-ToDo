@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, TableViewCellDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     var toDoItems = [ToDoItem]()
@@ -31,7 +31,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.backgroundColor = UIColor.black
+        tableView.register(TableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.separatorStyle = .none
         tableView.rowHeight = 50.0
     }
@@ -47,9 +48,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell",
-                                                 for: indexPath as IndexPath) 
+                                                 for: indexPath as IndexPath) as! TableViewCell
+        cell.textLabel?.backgroundColor = UIColor.clear
         let item = toDoItems[indexPath.row]
         cell.textLabel?.text = item.text
+        cell.selectionStyle = .none
+        cell.delegate = self
+        cell.toDoItem = item
         return cell
     }
     
@@ -62,6 +67,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell,
                    forRowAt indexPath: IndexPath) {
         cell.backgroundColor = colorForIndex(index: indexPath.row)
+    }
+    
+    func toDoItemDeleted(todoItem toDoItem: ToDoItem) {
+        let index = (toDoItems as NSArray).index(of: toDoItem)
+        if index == NSNotFound { return }
+        toDoItems.remove(at: index)
+        
+        tableView.beginUpdates()
+        let indexPathForRow = NSIndexPath(row: index, section: 0)
+        tableView.deleteRows(at: [indexPathForRow as IndexPath], with: .fade)
+        tableView.endUpdates()    
     }
 }
 

@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "F007C4CCCEE3C00E7FF4E45EC54F779F4AA1000D",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "263922553A17E8623CFA4CCEA701BECCF717A16A" : 9223372036854775807,
+    "F007C4CCCEE3C00E7FF4E45EC54F779F4AA1000D" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "1B513887-A77A-4ED7-9CCD-6F52CB522A94",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "263922553A17E8623CFA4CCEA701BECCF717A16A" : "",
+    "F007C4CCCEE3C00E7FF4E45EC54F779F4AA1000D" : "Gesture-Driven-ToDo\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Gesture-Driven-ToDo",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Gesture-Driven-ToDo.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:ParulKSharda\/Gesture-driven-ToDo.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "263922553A17E8623CFA4CCEA701BECCF717A16A"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:ParulKSharda\/Gesture-driven-ToDo.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "F007C4CCCEE3C00E7FF4E45EC54F779F4AA1000D"
+    }
+  ]
+}
