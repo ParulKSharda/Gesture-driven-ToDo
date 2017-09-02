@@ -10,11 +10,17 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, TableViewCellDelegate {
 
-    @IBOutlet weak var tableView: UITableView!
     var toDoItems = [ToDoItem]()
     
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var addToDoTask: UIButton!
+    @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var taskTextField: UITextField!
+   
     override func viewDidLoad() {
         super.viewDidLoad()
+        styling()
+        peekaboo()
         
         toDoItems.append(ToDoItem(text: "feed the cat"))
         toDoItems.append(ToDoItem(text: "buy eggs"))
@@ -36,6 +42,33 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.separatorStyle = .none
         tableView.rowHeight = 50.0
     }
+    
+    func styling() {
+        let myGreen = UIColor(red: 75.00/255.00, green: 190.00/255.00, blue: 102.00/255.00, alpha: 1.00)
+        taskTextField.layer.borderWidth = 2.0
+        taskTextField.layer.borderColor = myGreen.cgColor
+        addButton.backgroundColor = myGreen
+        addButton.setTitleColor(UIColor.white, for: .normal)
+        addButton.titleLabel?.textAlignment = .center
+    }
+    
+    func peekaboo() {
+        addToDoTask.isHidden = false
+        taskTextField.isHidden = true
+        addButton.isHidden = true
+    }
+    
+    @IBAction func addTask(_ sender: Any) {
+        addToDoTask.isHidden = true
+        taskTextField.isHidden = false
+        addButton.isHidden = false
+    }
+    
+    
+    @IBAction func didSelectAdd(_ sender: Any) {
+        peekaboo()
+    }
+
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1

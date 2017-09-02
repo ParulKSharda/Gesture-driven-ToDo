@@ -23,24 +23,68 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="p7L-2v-WrL">
-                                <rect key="frame" x="16" y="20" width="343" height="647"/>
+                                <rect key="frame" x="16" y="96" width="343" height="571"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wwn-TX-EQ0">
+                                <rect key="frame" x="16" y="40" width="343" height="36"/>
+                                <color key="backgroundColor" red="0.29346169305194647" green="0.74455553756476678" blue="0.39899302936803765" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                <state key="normal" title="+   Add a to-do task">
+                                    <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="addTask:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RhI-5p-3Lh"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ex: Buy Fruits" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kx0-hj-T9g">
+                                <rect key="frame" x="16" y="40" width="250" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="EmM-XF-DoB"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eqm-D5-mk6">
+                                <rect key="frame" x="309" y="40" width="50" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="qnA-RJ-Frh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="didSelectAdd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lbc-l2-edm"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="kx0-hj-T9g" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="6i8-o4-hO7"/>
+                            <constraint firstItem="p7L-2v-WrL" firstAttribute="top" secondItem="Wwn-TX-EQ0" secondAttribute="bottom" constant="20" id="9jw-FO-MeC"/>
+                            <constraint firstItem="eqm-D5-mk6" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="Ann-jk-BfH"/>
+                            <constraint firstItem="Wwn-TX-EQ0" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="PRs-9d-Mxb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Wwn-TX-EQ0" secondAttribute="trailing" id="PY0-66-f6s"/>
                             <constraint firstItem="p7L-2v-WrL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="QES-JI-bqw"/>
+                            <constraint firstItem="kx0-hj-T9g" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Qoh-p7-Bz0"/>
+                            <constraint firstItem="Wwn-TX-EQ0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ZTe-dD-S14"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eqm-D5-mk6" secondAttribute="trailing" id="dVK-v0-H09"/>
+                            <constraint firstItem="p7L-2v-WrL" firstAttribute="top" secondItem="eqm-D5-mk6" secondAttribute="bottom" constant="20" id="ftD-jz-sUv"/>
                             <constraint firstAttribute="trailingMargin" secondItem="p7L-2v-WrL" secondAttribute="trailing" id="lAC-3Q-fod"/>
-                            <constraint firstItem="p7L-2v-WrL" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="nss-bz-8EO"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="p7L-2v-WrL" secondAttribute="bottom" id="nzy-Rz-LW2"/>
+                            <constraint firstItem="p7L-2v-WrL" firstAttribute="top" secondItem="kx0-hj-T9g" secondAttribute="bottom" constant="20" id="vlV-bY-DoN"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addButton" destination="eqm-D5-mk6" id="W66-pc-9xU"/>
+                        <outlet property="addToDoTask" destination="Wwn-TX-EQ0" id="eiy-pw-1aE"/>
                         <outlet property="tableView" destination="p7L-2v-WrL" id="XLM-Bl-9IO"/>
+                        <outlet property="taskTextField" destination="kx0-hj-T9g" id="dVE-Lw-hKp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-442.39999999999998" y="1.3493253373313345"/>
         </scene>
     </scenes>
 </document>
